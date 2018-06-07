@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+	<link rel="icon" href="images/favicon.ico">
+	<!-- 1. 引入字体图标的样式文件 -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 2. 引入mui的样式文件 -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <!-- 3. 引入less的时候可以直接引入 但是rel="stylesheet/less" -->
+    <link rel="stylesheet/less" href="less/index.less">
+    <!-- 3.1 引入less.js编译器文件 （专门在浏览器里面去临时编译less）  less.js需要在less文件后面引入 但是不能放在body后面 因为less.js是需要编译less来生成css会影响页面渲染 -->
+    <!-- js通常是放在body结束标签的上面 但是有一些js要放到head里面（对页面渲染有影响） -->
+    <script src="lib/less/less.js"></script>
+</head>
+<body>
+	<!-- 头部区域 -->
+	<header id="header">
+		<h4>乐淘云购</h4>
+		<a href="#" class="fa fa-search" aria-hidden="true"></a>
+	</header>
+	<!-- 中间区域 -->
+	<main id="main">
+		<!-- 轮播图区域 -->
+		<section id="slide">
+			<div class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="./images/banner4.png" />
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./images/banner1.png" />
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./images/banner2.png" />
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./images/banner3.png" />
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="./images/banner4.png" />
+						</a>
+					</div>
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="./images/banner1.png" />
+						</a>
+					</div>
+				</div>
+				<!-- 轮播图小圆点容器 -->
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			  </div>
+		</section>
+		<!-- 导航区域 -->
+		<nav id="nav"></nav>
+		<!-- 广告区域 -->
+		<section id="banner"></section>
+		<!-- 品牌专区 -->
+		<section id="brand-area"></section>
+		<!-- 运动专区 -->
+		<section id="sport-area"></section>
+		<!-- 女士专区 -->
+		<section id="women-area"></section>
+		<!-- 男士专区 -->
+		<section id="man-area"></section>
+	</main>
+	<!-- 底部区域 -->
+	<footer id="footer"></footer>
+	<!-- js在body结束标签的上面引入 -->
+    <!-- 4. 引入mui的js文件 -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 5. 引入zepto的js文件 -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 6. 引入模板引擎的js文件 -->
+    <script src="lib/artTemplate/template.js"></script>
+    <!-- 7. 引入自己写的js文件  -->
+    <script src="js/index.js"></script>
+</body>
+</html>

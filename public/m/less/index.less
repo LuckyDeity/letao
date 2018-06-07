@@ -1,0 +1,36 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+strong {
+	font-weight: normal;
+}
+@maincolor: #006699;
+#header {
+	background-color: @maincolor;
+	height: 45px;
+	position: relative;
+	>h4{
+		color: white;
+		text-align: center;
+		line-height: 45px;
+		margin: 0;
+	}
+	>a {
+		color: white;
+		position: absolute;
+		top: 12px;
+		right: 20px;
+		font-size: 20px;
+	}
+}
