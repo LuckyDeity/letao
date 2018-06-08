@@ -1,0 +1,27 @@
+@import "./baet.less";
+#main {
+    padding: 45px 0;
+    display: flex;
+    .main-left {
+        flex-basis: 80px;
+        ul {
+            width: 100%;
+            background-color: white;
+            li {
+                width: 100%;
+                height: 45px;
+                text-align: center;
+                line-height: 45px;
+                font-size: 14px;
+                border-bottom: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                &.active {
+                    background-color: #ccc;
+                }
+            }
+        }
+    }
+    .main-right {
+        flex: 1;
+    }
+}

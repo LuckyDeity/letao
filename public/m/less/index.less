@@ -1,36 +1,75 @@
-*{
-	margin: 0;
-	padding: 0;
-}
-li {
-	list-style: none;
-}
-a {
-	text-decoration: none;
-}
-h1,
-h2,
-h3,
-h4,
-strong {
-	font-weight: normal;
-}
-@maincolor: #006699;
-#header {
-	background-color: @maincolor;
-	height: 45px;
-	position: relative;
-	>h4{
-		color: white;
-		text-align: center;
-		line-height: 45px;
-		margin: 0;
+@import "./baet.less";
+
+// 中间区域
+#main {
+	padding: 45px 0;
+	#nav {
+		padding: 10px;
+		a {
+			display: block;
+			img {
+				width: 100%;
+			}
+		}
 	}
-	>a {
-		color: white;
-		position: absolute;
-		top: 12px;
-		right: 20px;
-		font-size: 20px;
+	#banner {
+		border-top: 1px solid #ccc;
+		a {
+			display: block;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	#brand-area {
+		a {
+			background-color: white;
+			display: block;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	#sport-area,
+	#women-area,
+	#man-area {
+		.title {
+			a {
+				img {
+					width: 100%;
+				}
+			}
+		}
+		.mui-row {
+			>div {
+				padding: 5px;
+				background-color: white;
+				a {
+					padding: 10px 0;
+					box-shadow: 0px 0px 5px #666;
+					display: block;
+					text-align: center;
+					img {
+						width: 100%;
+					}
+					p {
+						&:nth-child(3) {
+							line-height: 40px;
+							span {
+								&:nth-child(1) {
+									color: red;
+									margin-right: 10px;
+								}
+							}
+						}
+					}
+					.mui-btn {
+						background-color: @maincolor;
+						border: @maincolor 1px solid;
+					}
+				}
+			}
+		}
 	}
 }
+

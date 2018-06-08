@@ -1,0 +1,107 @@
+div,
+span,
+p,
+a,
+img,
+input,
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+li,
+s,
+i,
+b,
+ins,
+strong {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	border: none;
+}
+h1,
+h2,
+h3,
+h4,
+strong {
+	font-weight: normal;
+}
+img {
+	border: none;
+	vertical-align: middle;
+}
+
+
+
+@maincolor: #006699;
+// 头部区域
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	background-color: @maincolor;
+	height: 45px;
+	>h4{
+		color: white;
+		text-align: center;
+		line-height: 45px;
+		margin: 0;
+	}
+	>a {
+		color: white;
+		font-size: 20px;
+		top: 12px;
+		position: absolute;
+		&:first-child {
+			left: 20px;
+		}
+		&:last-child {
+			right: 20px;
+		}
+	}
+	form {
+		padding: 5px 55px 0;
+		input {
+			background-color: white;
+			margin: 0;
+			border-radius: 0;
+			text-align: left;
+		}
+	}
+}
+
+//底部区域
+#footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	height: 45px;
+	background-color: @maincolor;
+	.mui-row {
+		padding-top: 6px;
+		a {
+			color: white;
+			text-align: center;
+			font-size: 18px;
+			span {
+				margin-top: 2px;
+				font-size: 14px;
+				display: block;
+			}
+			&.active {
+				color: orange;
+			}
+		}
+	}
+}
