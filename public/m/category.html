@@ -29,14 +29,69 @@
 	<main id="main">
 		<div class="main-left">
 			<ul>
-				<li class="active">运动馆</li>
-				<li>女士馆</li>
-				<li>男士馆</li>
-				<li>帆布馆</li>
-				<li>户外馆</li>
 			</ul>
 		</div>
-		<div class="main-right"></div>
+		<div class="main-right">
+			<!-- 1. 区域滚动的父容器 -->
+			<div class="mui-scroll-wrapper">
+				<!-- 2. 区域滚动的子容器 -->
+				<div class="mui-scroll">
+					<!-- 品牌专区 -->
+					<section id="brand-area">
+						<div class="mui-row">
+							<div class="">
+								<a href="#">
+									<img src="./images/brand1.png" alt="">
+									<p>耐克</p>
+								</a>
+							</div>
+							<div class="">
+								<a href="#">
+									<img src="./images/brand2.png" alt="">
+									<p>耐克</p>
+								</a>
+							</div>
+							<div class="">
+								<a href="#">
+									<img src="./images/brand3.png" alt="">
+									<p>耐克</p>
+								</a>
+							</div>
+							<div class="">
+								<a href="#">
+									<img src="./images/brand4.png" alt="">
+									<p>耐克</p>
+								</a>
+							</div>
+							<div class="">
+								<a href="#">
+									<img src="./images/brand5.png" alt="">
+									<p>耐克</p>
+								</a>
+							</div>
+							<div class="">
+								<a href="#">
+									<img src="./images/brand6.png" alt="">
+									<p>耐克</p>
+								</a>
+							</div>
+							<div class="">
+								<a href="#">
+									<img src="./images/brand7.png" alt="">
+									<p>耐克</p>
+								</a>
+							</div>
+							<div class="">
+								<a href="#">
+									<img src="./images/brand8.png" alt="">
+									<p>耐克</p>
+								</a>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
 	</main>
 
 	<!-- 底部区域 -->
@@ -56,7 +111,26 @@
 			</a>
 		</div>
 	</footer>
-
+	<!-- 模板 -->
+	<script id="cateogoryLeftTmp" type="text/html">
+		{{each rows as value i}}	    			
+			<li class="{{i == 0 ? 'active' : ''}}">
+					<!-- 渲染左侧分类的时候把id保存在左侧分类的a的自定义属性data-id上 -->
+			<a href="#" data-id="{{value.id}}">{{value.categoryName}}</a>
+			</li>		         		         
+		{{/each}}
+	</script>
+	<!-- 2. 定义右侧分类的模板  -->
+	<script id="categoryRightTmp" type="text/html">
+		{{each rows as value i}}
+			<div class="mui-col-xs-4">
+				<a href="#">
+					<img src="{{value.brandLogo}}" alt="">
+						<p>{{value.brandName}}</p>
+				</a>
+			</div>
+		{{/each}}
+	</script>
 	<!-- 4. 引入mui的js文件 -->
     <script src="lib/mui/js/mui.js"></script>
     <!-- 5. 引入zepto的js文件 -->
