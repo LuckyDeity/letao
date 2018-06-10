@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+  <link rel="icon" href="images/favicon.ico">
+  <!-- 1. 引入字体图标的样式文件 -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 2. 引入mui的样式文件 -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <!-- 3. 引入less的时候可以直接引入 但是rel="stylesheet/less" -->
+    <link rel="stylesheet/less" href="./less/search.less">
+    <!-- 3.1 引入less.js编译器文件 -->
+    <script src="lib/less/less.js"></script>
+</head>
+<body>
+  <!-- 头部区域 -->
+  <header id="header">
+    <a href="#" class="fa fa-arrow-left"></a>
+    <h4>搜索中心</h4>
+  </header>
+  <!-- 中心区域 -->
+  <div id="container">
+    <div class="search">
+      <form action="#">
+        <input type="text" placeholder="请输入喜欢的商品">
+        <a href="productist.html" class="mui-btn mui-btn-primary seek">搜索</a>
+      </form>
+    </div>
+    <div class="history">
+      <div class="empty mui-clearfix">
+        <span class="mui-pull-left">搜索历史</span>
+        <span class="mui-pull-right fa fa-trash search-clear"> 清空记录</span>
+      </div>
+      <div class="history-content">
+        <ul>
+          <li class="mui-clearfix">
+            <a href="#">
+              <span class="mui-pull-left">1</span>
+              <span class="fa fa-plus mui-pull-right delete"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="mui-pull-left">1</span>
+              <span class="fa fa-plus mui-pull-right delete"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="mui-pull-left">1</span>
+              <span class="fa fa-plus mui-pull-right delete"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- 底部区域 -->
+  <footer id="footer">
+    <div class="mui-row">
+      <a href="index.html" class="mui-col-xs-3 fa fa-home">
+        <span>首页</span>
+      </a>
+      <a href="#" class="mui-col-xs-3 fa fa-bars">
+        <span>分类</span>
+      </a>
+      <a href="#" class="mui-col-xs-3 fa fa-shopping-cart">
+        <span>购物车</span>
+      </a>
+      <a href="#" class="mui-col-xs-3 fa fa-user">
+        <span>会员中心</span>
+      </a>
+    </div>
+  </footer>
+  <!-- 模板引擎 -->
+  <script id="historyContent" type="text/html">
+    {{each rows as value i}}
+      <li>
+          <a href="#">
+            <span class="mui-pull-left">{{value.search}}</span>
+            <span class="fa fa-plus mui-pull-right delete" data-id="{{value.id}}"></span>
+          </a>
+      </li>
+    {{/each}}
+  </script>
+  <!-- 4. 引入mui的js文件 -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 5. 引入zepto的js文件 -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 6. 引入模板引擎的js文件 -->
+    <script src="lib/artTemplate/template.js"></script>
+    <!-- 7. 引入自己写的js文件  -->
+    <script src="js/search.js"></script>
+</body>
+</html>

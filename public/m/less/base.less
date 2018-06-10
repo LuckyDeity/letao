@@ -37,7 +37,11 @@ img {
 	border: none;
 	vertical-align: middle;
 }
-
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
 
 
 @maincolor: #006699;
@@ -105,3 +109,76 @@ img {
 		}
 	}
 }
+
+// 搜索框公共样式
+#container {
+  padding: 45px 0;
+  height: 100%;
+  background-color: white;
+  .search {
+    width: 100%;
+    padding: 10px 20px;
+    form {
+      position: relative;
+      input {
+        border: 1px solid @maincolor;
+        margin: 0;
+        height: 30px;
+        border-radius: 5px;
+        font-size: 12px;
+      }
+      a {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 30px;
+        background-color: @maincolor;
+      }
+    }
+  }
+}
+
+// 商品公共样式
+#sport-area,
+  #women-area,
+  #man-area {
+    height: 100%;
+    .title {
+      a {
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .mui-row {
+      height: 100%;
+      >div {
+        padding: 5px;
+        background-color: white;
+        a {
+          padding: 10px 0;
+          box-shadow: 0px 0px 5px #666;
+          display: block;
+          text-align: center;
+          img {
+            width: 100%;
+          }
+          p {
+            &:nth-child(3) {
+              line-height: 40px;
+              span {
+                &:nth-child(1) {
+                  color: red;
+                  margin-right: 10px;
+                }
+              }
+            }
+          }
+          .mui-btn {
+            background-color: @maincolor;
+            border: @maincolor 1px solid;
+          }
+        }
+      }
+    }
+  }

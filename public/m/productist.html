@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+  <link rel="icon" href="images/favicon.ico">
+  <!-- 1. 引入字体图标的样式文件 -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 2. 引入mui的样式文件 -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <!-- 3. 引入less的时候可以直接引入 但是rel="stylesheet/less" -->
+    <link rel="stylesheet/less" href="./less/productist.less">
+    <!-- 3.1 引入less.js编译器文件 -->
+    <script src="lib/less/less.js"></script>
+</head>
+<body>
+  <!-- 头部区域 -->
+  <header id="header">
+    <a href="#" class="fa fa-arrow-left"></a>
+    <h4>搜索中心</h4>
+  </header>
+  <!-- 区域滚动 -->
+  <div id="container">
+  <div class="main">
+    <div class="mui-scroll-wrapper">
+  <div class="mui-scroll">
+  <!-- 中心区域 -->
+  
+    <div class="search">
+      <form action="#">
+        <input type="text" placeholder="请输入喜欢的商品">
+        <a href="#" class="mui-btn mui-btn-primary seek">搜索</a>
+      </form>
+    </div>
+    <section id="sport-area">
+      <div class="mui-row">
+        <div class="mui-col-xs-6">
+          <a href="#">
+            <img src="./images/product.jpg" alt="">
+            <p>adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
+            <p><span>¥560.00</span><del>¥888.00</del></p>
+            <button type="button" class="mui-btn mui-btn-danger">立即购买</button>
+          </a>
+        </div>
+        <div class="mui-col-xs-6">
+          <a href="#">
+            <img src="./images/product.jpg" alt="">
+            <p>adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
+            <p><span>¥560.00</span><del>¥888.00</del></p>
+            <button type="button" class="mui-btn mui-btn-danger">立即购买</button>
+          </a>
+        </div>
+        <div class="mui-col-xs-6">
+          <a href="#">
+            <img src="./images/product.jpg" alt="">
+            <p>adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
+            <p><span>¥560.00</span><del>¥888.00</del></p>
+            <button type="button" class="mui-btn mui-btn-danger">立即购买</button>
+          </a>
+        </div>
+        <div class="mui-col-xs-6">
+          <a href="#">
+            <img src="./images/product.jpg" alt="">
+            <p>adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
+            <p><span>¥560.00</span><del>¥888.00</del></p>
+            <button type="button" class="mui-btn mui-btn-danger">立即购买</button>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+  </div>
+</div>
+  </div>
+  <!-- 底部区域 -->
+  <footer id="footer">
+    <div class="mui-row">
+      <a href="index.html" class="mui-col-xs-3 fa fa-home">
+        <span>首页</span>
+      </a>
+      <a href="./category.html" class="mui-col-xs-3 fa fa-bars">
+        <span>分类</span>
+      </a>
+      <a href="#" class="mui-col-xs-3 fa fa-shopping-cart">
+        <span>购物车</span>
+      </a>
+      <a href="#" class="mui-col-xs-3 fa fa-user">
+        <span>会员中心</span>
+      </a>
+    </div>
+  </footer>
+  <!-- 模板引擎 -->
+  <script id="historyContent" type="text/html">
+    {{each rows as value i}}
+      <li>
+          <a href="#">
+            <span class="mui-pull-left">{{value.search}}</span>
+            <span class="fa fa-plus mui-pull-right delete" data-id="{{value.id}}"></span>
+          </a>
+      </li>
+    {{/each}}
+  </script>
+  <!-- 4. 引入mui的js文件 -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 5. 引入zepto的js文件 -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 6. 引入模板引擎的js文件 -->
+    <script src="lib/artTemplate/template.js"></script>
+    <!-- 7. 引入自己写的js文件  -->
+    <script src="js/productist.js"></script>
+</body>
+</html>
