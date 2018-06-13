@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+  <link rel="icon" href="images/favicon.ico">
+  <!-- 1. 引入字体图标的样式文件 -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 2. 引入mui的样式文件 -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <!-- 3. 引入less的时候可以直接引入 但是rel="stylesheet/less" -->
+    <link rel="stylesheet/less" href="less/particulars.less">
+    <!-- 3.1 引入less.js编译器文件 （专门在浏览器里面去临时编译less）  less.js需要在less文件后面引入 但是不能放在body后面 因为less.js是需要编译less来生成css会影响页面渲染 -->
+    <!-- js通常是放在body结束标签的上面 但是有一些js要放到head里面（对页面渲染有影响） -->
+    <script src="lib/less/less.js"></script>
+</head>
+<body>
+  <!-- 头部区域 -->
+  <header id="header">
+    <a href="#" class="fa fa-arrow-left"></a>
+    <h4>商品详情</h4>
+    <a href="./search.html" class="fa fa-search" aria-hidden="true"></a>
+  </header>
+  <!-- 1. 区域滚动的父容器 -->
+    <div class="mui-scroll-wrapper">
+        <!-- 2. 区域滚动的子容器 -->
+        <div class="mui-scroll">
+          <!-- 中间主体部分 -->
+          <main id="main">
+            <!-- 轮播图区域 -->
+            <section id="slide">
+              <div class="mui-slider">
+                
+              </div>
+            </section>
+            <div class="name">
+                <span>匡威三星标1970s converse复刻 142334c 144757c三星标黑色高帮</span>
+            </div>
+            <div class="price">
+              价格：<strong class="present">¥499.1</strong>
+              <del class="original">¥888.1</del>
+            </div>
+            <div class="size">
+              尺码:
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <span>5</span>
+              <span>6</span>
+              <span>7</span>
+              <span>8</span>
+              <span>9</span>
+              <span>10</span>
+            </div>
+            <div class="num">
+              数量：
+              <div class="mui-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='100'>
+                  <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                  <input class="mui-numbox-input" type="number" />
+                  <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+              </div>
+              剩余：20 件
+            </div>
+          </main>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div class="base">
+      <div class="mui-row">
+        <a href="#" class="mui-col-xs-2 btn_cart fa fa-shopping-cart"></a>
+        <div class="mui-col-xs-4 mui-btn mui-btn-danger cart">加入购物车</div>
+        <div class="mui-col-xs-4 mui-btn mui-btn-warning">立即购买</div>
+      </div>
+    </div>
+    <!-- 轮播图模板引擎 -->
+    <script type="text/html" id="slideshow">
+      <div class="mui-slider-group mui-slider-loop">
+        {{each pic as value i}}
+        {{if i == 0}}
+          <div class="mui-slider-item mui-slider-item-duplicate">
+            <a href="#">
+              <img src="{{pic[pic.length-1].picAddr}}" />
+            </a>
+          </div>
+        {{/if}}
+          <div class="mui-slider-item">
+            <a href="#">
+              <img src="{{value.picAddr}}" />
+            </a>
+          </div>
+        {{if i == pic.length-1}}
+          <div class="mui-slider-item mui-slider-item-duplicate">
+            <a href="#">
+              <img src="{{pic[0].picAddr}}" />
+            </a>
+          </div>
+        {{/if}}
+        {{/each}}
+      </div>
+      <!-- 轮播图小圆点容器 -->
+      <div class="mui-slider-indicator">
+      {{each pic as value i}}
+        <div class="mui-indicator {{i == 0 ? " mui-active" : ""}}"></div>
+      {{/each}}
+      </div>
+    </script>
+    <!-- 尺码模板引擎 -->
+    <script type="text/html" id="sizeplate">
+      尺码:
+      {{each size as value i}}
+          <span>{{value}}</span>
+      {{/each}}
+    </script>
+
+  <!-- js在body结束标签的上面引入 -->
+    <!-- 4. 引入mui的js文件 -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 5. 引入zepto的js文件 -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 6. 引入模板引擎的js文件 -->
+    <script src="lib/artTemplate/template.js"></script>
+    <!-- 7. 引入自己写的js文件  -->
+    <script src="js/particulars.js"></script>
+</body>
+</html>

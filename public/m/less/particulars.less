@@ -1,0 +1,66 @@
+@import "./base.less";
+
+.mui-scroll-wrapper {
+  .mui-scroll {
+    min-height: 101%;
+  }
+}
+#main {
+  padding: 45px 0;
+  >div {
+    border-bottom: 1px solid #ccc;
+  }
+  .name {
+    padding: 20px 0;
+  }
+  .price {
+    padding: 20px 0;
+    .present {
+      color: red;
+      font-size: 28px;
+    }
+  }
+  .size {
+    padding: 20px 0;
+    span {
+      border: 1px solid #ccc;
+      padding: 3px 6px;
+      line-height: 35px;
+    }
+    span.actice {
+      background-color: yellow;
+    }
+  }
+  .num {
+    padding: 20px 0;
+  }
+}
+.base {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 45px;
+  width: 100%;
+  z-index: 999;
+  background-color: #999;
+  padding-top: 5px;
+  >div {
+    a {
+      // display: block;
+      margin-right: 20px;
+      color: black;
+      font-size: 30px;
+      text-align: center;
+      line-height: 35px;
+      color: white;
+    }
+    >div {
+      &:nth-child(2) {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.mui-backdrop {
+  display: none;
+}

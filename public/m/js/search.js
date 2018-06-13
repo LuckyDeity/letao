@@ -13,8 +13,11 @@ var Letao = function(){
 Letao.prototype = {
   // 保存数据
   searchData:function(){
-    $(".seek").click(function(){
+    $(".seek").on("click",function(){
       var val = $(".search input").val();
+      // 跳转页面
+      window.location.href = 'productist.html?name='+val;
+
       var jsonArr = window.localStorage.getItem("searchData");
       var id = 0;
       if(jsonArr && JSON.parse(jsonArr).length > 0){
@@ -24,7 +27,7 @@ Letao.prototype = {
         jsonArr = [];
         id = 0;
       }
-      if(val == ''){
+      if(!val.trim()){
         return;
       }
       var flag = false;
@@ -42,6 +45,8 @@ Letao.prototype = {
       var json = JSON.stringify(jsonArr);
       var result = window.localStorage.setItem("searchData",json);
       letao.searchApply();
+
+      
     })
   },
   //调用模板引擎渲染页面

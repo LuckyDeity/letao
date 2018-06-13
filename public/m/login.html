@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="icon" href="images/favicon.ico">
+    <!-- 1. 引入字体图标的样式文件 -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 2. 引入mui的样式文件 -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <!-- 3. 引入less的时候可以直接引入 但是rel="stylesheet/less" -->
+    <link rel="stylesheet/less" href="less/login.less">
+    <!-- 3.1 引入less.js编译器文件 （专门在浏览器里面去临时编译less）  less.js需要在less文件后面引入 但是不能放在body后面 因为less.js是需要编译less来生成css会影响页面渲染 -->
+    <!-- js通常是放在body结束标签的上面 但是有一些js要放到head里面（对页面渲染有影响） -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="#" class="fa fa-arrow-left"></a>
+        <h4>商品详情</h4>
+        <a href="./search.html" class="fa fa-search" aria-hidden="true"></a>
+    </header>
+
+    <main id="main">
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <input type="text" class="mui-input-clear" placeholder="请输入用户名">
+            </div>
+            <div class="mui-input-row">
+                <input type="password" class="mui-input-password" placeholder="请输入密码">
+            </div>
+            <div class="mui-button-row">
+                <a type="button" class="mui-btn mui-btn-primary">登录</a>
+            </div>
+            <a href="#">免费注册</a>
+        </form>
+    </main>
+
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <a href="index.html" class="mui-col-xs-3 fa fa-home">
+                <span>首页</span>
+            </a>
+            <a href="category.html" class="mui-col-xs-3 fa fa-bars">
+                <span>分类</span>
+            </a>
+            <a href="#" class="mui-col-xs-3 fa fa-shopping-cart">
+                <span>购物车</span>
+            </a>
+            <a href="#" class="mui-col-xs-3 fa fa-user">
+                <span>会员中心</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- js在body结束标签的上面引入 -->
+    <!-- 4. 引入mui的js文件 -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 5. 引入zepto的js文件 -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 6. 引入模板引擎的js文件 -->
+    <script src="lib/artTemplate/template.js"></script>
+    <!-- 7. 引入自己写的js文件  -->
+    <script src="js/login.js"></script>
+</body>
+
+</html>

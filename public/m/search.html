@@ -25,7 +25,7 @@
     <div class="search">
       <form action="#">
         <input type="text" placeholder="请输入喜欢的商品">
-        <a href="productist.html" class="mui-btn mui-btn-primary seek">搜索</a>
+        <a href="#" class="mui-btn mui-btn-primary seek">搜索</a>
       </form>
     </div>
     <div class="history">
@@ -78,7 +78,7 @@
   <script id="historyContent" type="text/html">
     {{each rows as value i}}
       <li>
-          <a href="#">
+          <a href="./productist.html?name={{value.search}}">
             <span class="mui-pull-left">{{value.search}}</span>
             <span class="fa fa-plus mui-pull-right delete" data-id="{{value.id}}"></span>
           </a>
